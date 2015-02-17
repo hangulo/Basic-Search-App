@@ -37,11 +37,14 @@
     <td bgcolor="#eee" width="100" height="200">
         <div id="section">
   <h2>Events </h2>
+
+
 {% if y %}
 {% for n in y%}
     {% if n=="{" or n=="}" %}
         <div>{{ n }}</div>
     {% endif %}
+
     {% if n!="{" %}
        {{n}}
 
