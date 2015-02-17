@@ -3,7 +3,7 @@
     <title> Hello </title>
   </head>
   <body>
-  <H2> Hi.....</H2>
+  <H2> Loggly Search App </H2>
     <div class="container">
       {% block content %}
 
@@ -12,6 +12,16 @@
 
     {{ form.subdomain.label }}
     {{ form.subdomain }}
+
+
+    {{ form.searchFrom.label }}
+    {{ form.searchFrom }}
+
+    {{ form.searchTo.label }}
+    {{ form.searchTo }}
+
+    {{ form.query.label }}
+    {{ form.query }}
     {{ form.submit }}
   </form>
 

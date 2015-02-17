@@ -2,11 +2,22 @@
  
 {% block content %}
 
-   <form action="" method=post>
+    <form action="" method=post>
     {{ form.hidden_tag() }}
 
     {{ form.subdomain.label }}
     {{ form.subdomain }}
+
+    {{ form.searchFrom.label }}
+    {{ form.searchFrom }}
+
+    {{ form.searchTo.label }}
+    {{ form.searchTo }}
+
+    {{ form.query.label }}
+    {{ form.query }}
+
+
     {{ form.submit }}
   </form>
  <h2># of Events: {{x}} </h2>

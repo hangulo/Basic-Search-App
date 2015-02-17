@@ -10,5 +10,8 @@ class ContactForm(Form):
   submit = SubmitField("Send")
 
 class SearchForm(Form):
-  subdomain = TextField("Subdomain")
+  subdomain = TextField("FQDN", default="chopperui.loggly.com")
+  searchFrom = TextField("From:", default="-10m")
+  searchTo = TextField("To:", default="now")
+  query = TextField("Search Query:", default="*")
   submit = SubmitField("Search")

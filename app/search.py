@@ -3,12 +3,11 @@ __author__ = 'Angulo'
 import requests, json
 
 #accountFqdn= "chopperui.loggly.com"
-query= "*0"
-searchFrom= "-1m"
-searchTo= "now"
+#query= "*0"
+#searchFrom= "-1m"
+#searchTo= "now"
 
-
-def initiateSearch(accountFqdn):
+def initiateSearch(accountFqdn,searchFrom,searchTo,query):
 
     search_url = ("https://" + accountFqdn + "/apiv2/search?q=" + query + "&from=" +
                   str(searchFrom) + "&until=" + str(searchTo) + "&order=asc&size=1")

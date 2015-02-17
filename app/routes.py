@@ -12,11 +12,15 @@ app.secret_key = 'hihi123456'
 def root():
     form = SearchForm()
     if request.method == 'POST':
-        subdomain2 = str(form.subdomain.data)
-        print subdomain2 + "!!!!!!!!!!!!!"
-        subdomain = "chopperui.loggly.com"
-        rsid= initiateSearch(subdomain)
-        results_JSON= getSearchResults(rsid, subdomain2)
+        # Get the user's inputs
+        subdomain = str(form.subdomain.data)
+        searchFrom = str(form.searchFrom.data)
+        searchTo = str(form.searchTo.data)
+        query = str(form.query.data)
+
+        ## Begin the Search Query
+        rsid= initiateSearch(subdomain,searchFrom,searchTo,query)
+        results_JSON= getSearchResults(rsid, subdomain)
 
         events_JSON = results_JSON["events"]
         results_TXT= json.dumps(results_JSON, sort_keys=True,indent=4, separators=(',', ': '))
@@ -24,9 +28,9 @@ def root():
 
         events_num =  str(results_JSON["total_events"])
         page_num = str(results_JSON["page"])
-        print "# of events: "+ events_num
-        print "Page "+ page_num
-        print "############   Just Events: "+ str(results_JSON["events"])
+        #print "# of events: "+ events_num
+        #print "Page "+ page_num
+        #print "############   Just Events: "+ str(results_JSON["events"])
 
         return render_template('results.html',form=form, x=events_num, y=events_TXT, z=events_num )
     return render_template('index.html', form=form)
