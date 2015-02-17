@@ -6,7 +6,7 @@ from app.search import *
 
 app = Flask(__name__)
 
-app.secret_key = 'hihi123456'
+app.secret_key = 'hihi1234567'
 
 @app.route('/', methods=['GET', 'POST'])
 def root():
