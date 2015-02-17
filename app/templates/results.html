@@ -1,8 +1,30 @@
-{% extends "layout.html" %}
+{% extends "index.html" %}
  
 {% block content %}
-  <h2>Result Set</h2>
-    <p> {{x}} </p>
+
+   <form action="" method=post>
+    {{ form.hidden_tag() }}
+
+    {{ form.subdomain.label }}
+    {{ form.subdomain }}
+    {{ form.submit }}
+  </form>
+ <h2># of Events: {{x}} </h2>
+
+  <h2>###################### </h2>
+
+  <h2>Events </h2>
+{% if y %}
+{% for n in y%}
+    {% if n=="{" or n=="}" %}
+        <div>{{ n }}</div>
+    {% endif %}
+    {% if n!="{" %}
+       {{n}}
+
+    {% endif %}
+{%endfor%}
+{% endif %}
 
 
 {% endblock %}

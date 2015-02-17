@@ -1,13 +1,25 @@
 <html>
   <head>
-    <title> Title </title>
+    <title> Hello </title>
   </head>
   <body>
-    Enter Python to execute:
-    <form action="" method="post">
-      <input type="text" name="expression" />
-      <input type="submit" value="Execute" />
-    </form>
+  <H2> Hi.....</H2>
+    <div class="container">
+      {% block content %}
+
+    <form action="" method=post>
+    {{ form.hidden_tag() }}
+
+    {{ form.subdomain.label }}
+    {{ form.subdomain }}
+    {{ form.submit }}
+  </form>
+
+
+      {% endblock %}
+    </div>
+
+
   </body>
 </html><!DOCTYPE html>
 <html>

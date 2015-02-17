@@ -8,3 +8,7 @@ class ContactForm(Form):
   subject = TextField("Subject")
   message = TextAreaField("Message")
   submit = SubmitField("Send")
+
+class SearchForm(Form):
+  subdomain = TextField("Subdomain")
+  submit = SubmitField("Search")
