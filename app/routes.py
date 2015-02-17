@@ -11,7 +11,9 @@ app.secret_key = 'hihi123456'
 @app.route('/', methods=['GET', 'POST'])
 def root():
     if request.method == 'POST':
-        return "blah 123"
+        results= getSearchResults(initiateSearch())
+        print "Results here: "+ results
+        return render_template('results.html', success=True, x=results, y=2)
     return render_template('index.html')
 
 
