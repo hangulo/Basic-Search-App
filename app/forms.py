@@ -14,4 +14,5 @@ class SearchForm(Form):
   searchFrom = TextField("From:", default="-10m")
   searchTo = TextField("To:", default="now")
   query = TextField("Search Query:", default="*")
+  size = TextField("# of Results to Show", default="1")
   submit = SubmitField("Search")

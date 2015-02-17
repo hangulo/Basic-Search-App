@@ -17,9 +17,10 @@ def root():
         searchFrom = str(form.searchFrom.data)
         searchTo = str(form.searchTo.data)
         query = str(form.query.data)
+        size = str(form.size.data)
 
         ## Begin the Search Query
-        rsid= initiateSearch(subdomain,searchFrom,searchTo,query)
+        rsid= initiateSearch(subdomain,searchFrom,searchTo,query,size)
         results_JSON= getSearchResults(rsid, subdomain)
 
         events_JSON = results_JSON["events"]

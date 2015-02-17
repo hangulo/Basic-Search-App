@@ -7,10 +7,10 @@ import requests, json
 #searchFrom= "-1m"
 #searchTo= "now"
 
-def initiateSearch(accountFqdn,searchFrom,searchTo,query):
+def initiateSearch(accountFqdn,searchFrom,searchTo,query,size):
 
     search_url = ("https://" + accountFqdn + "/apiv2/search?q=" + query + "&from=" +
-                  str(searchFrom) + "&until=" + str(searchTo) + "&order=asc&size=1")
+                  str(searchFrom) + "&until=" + str(searchTo) + "&order=asc&size="+str(size))
 
     #print "Search URL: " + search_url
 
