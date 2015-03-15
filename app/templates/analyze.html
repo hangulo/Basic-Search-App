@@ -28,17 +28,14 @@
    padding:5px;
 }
 </style>
-    <title> Demo App </title>
- <strong><link rel="stylesheet" href="{{ url_for('static', filename='css/results.css') }}"></strong>
+    <title> JSON Analyze </title>
+ <strong><link rel="stylesheet" href="{{ url_for('static', filename='css/analyze.css') }}"></strong>
   </head>
   <body>
 
   <div id="header">
-<h1>Demo Search App</h1>
+<h1>Demo Analyze Utility</h1>
 </div>
-
-
-
   <table width="100%" border="0">
 
   <tr valign="top">
@@ -48,44 +45,25 @@
 
     <form action="" method=post>
     {{ form.hidden_tag() }}
-
-    {{ form.subdomain.label }}
-    {{ form.subdomain }}
-
-    {{ form.user.label }}
-    {{ form.user }}
-
-    {{ form.password.label }}
-    {{ form.password }}
-
-
-    {{ form.searchFrom.label }}
-    {{ form.searchFrom }}
-
-    {{ form.searchTo.label }}
-    {{ form.searchTo }}
-
-    {{ form.query.label }}
-    {{ form.query }}
-
-    {{ form.size.label }}
-    {{ form.size }}
+    {{ form.message.label }}
+    {{ form.message }}
 <p></p>
-
     {{ form.submit }}
   </form>
-
 
       {% endblock %}
     </div>
     </td>
     <td bgcolor="#eee" width="100" height="200">
+        Hello there
+        <p></p>
+        {{ form.message.data }}
+        <p></p>
 
     </td>
   </tr>
 
 </table>
-
 
 
 <div id="footer">
