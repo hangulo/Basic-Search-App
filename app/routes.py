@@ -1,4 +1,4 @@
-__author__ = 'Angulo'
+__author__ = 'Angulo_Hector'
 
 from flask import Flask, render_template, request
 from app.forms import *
